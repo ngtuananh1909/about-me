@@ -1,0 +1,11 @@
+🏠 Trang chủ:
+- Logo + tên
+- Thành tích
+- Thông tin liên hệ (FB, Zalo,...)
+- Game (đã chơi, đang chơi)
+- Sở thích (hobby)
+
+🎮 Game cụ thể:
+- Liên Quân
+- Genshin
+- Wuthering Waves
