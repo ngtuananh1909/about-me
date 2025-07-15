@@ -12,7 +12,7 @@
             <img src="/picture/avatar.png" alt="my avatar" title="TuanAnh" id ="avatar">
         </div>   
         <div class="name">
-            <p>Nguyen Tuan Anh<p>
+            <p>Nguyen Tuan Anh</p>
             <!-- <p>Web Developer</p> -->
         </div> 
     </div>
@@ -21,9 +21,43 @@
             <h2>About Me</h2>
             <p>Hello! I'm <strong>Nguyen Tuan Anh</strong>, born in 2007 👶 (2k7 squad 😎). I'm a coding newbie, just getting started on my dev journey.</p>
             <p>Currently exploring the magic of <span style="color:#f16529;">HTML</span>, <span style="color:#2965f1;">CSS</span>, and <span style="color:#f0db4f;">JavaScript</span>. Let’s build something awesome!</p>
-
         </div>
+    </div>
+    <h2>Achievement</h2>
+    <div id="achievement">
+        <button class="btn-thanh-tich" onclick="openModal('/picture/thanh-tich-1.png')">🏅 OLP 6/4</button>
+        <button class="btn-thanh-tich" onclick="openModal('/picture/thanh-tich-2.png')">🥉 Tin học Trẻ</button>
+    </div>
+
+    <!-- Modal -->
+    <div id="modal" class="modal" onclick="closeModal()">
+    <img id="modal-img" src="" alt="achievement">
+    </div>
+
+
+    <div id="social">
+        <h2>📱 Connect with me</h2>
+        <ul class="social-links">
+            <li><a href="https://www.facebook.com/tuan.anh.19092007" target="_blank">🌐 Facebook</a></li>
+            <li><a href="mailto:tuananh190907@gmail.com">📧 Gmail</a></li>
+            <li><a href="tel:+84799389161">📞 My Phone</a></li>
+            <li><a href="https://discord.com/users/1212307451991433218" target="_blank">💬 Discord</a></li>
+            <li><a href="https://github.com/ngtuananh1909" target="_blank">👨‍💻 Github</a></li>
+        </ul>
+        <a class="about-link" href="https://gravatar.com/nta1909k7" target="_blank">🔍 About me</a>
+    </div>
+
+
+    <div id="game">
+        <h2>My Game</h2>
+        <p>My game <a href="/html/game.html">game</a> that i was play!</p>
+    </div>
+
+    <div id="donate">
+        <h2>Donate</h2>
+        <p>If you like my self, consider supporting me on <a href="https://ko-fi.com/ngtuananh1909" target="_blank">Ko-fi</a>!</p>
     </div>
     
 </body>
+<script src="/js/script.js"></script>
 </html>
