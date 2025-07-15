@@ -138,7 +138,7 @@ img#avatar:hover {
   border-radius: 12px;
 }
 
-.btn-thanh-tich{
+.btn{
     width: 20%;
     padding: 10px;
     background-color: #00ffbf;
@@ -148,7 +148,7 @@ img#avatar:hover {
     cursor: pointer;
     font-size: 16px;
 }
-.btn-thanh-tich:hover {
+.btn:hover {
     background-color: #00e6b3;
     transform: scale(1.05);
 }
@@ -159,4 +159,34 @@ img#avatar:hover {
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.2);
   text-align: center;
+}
+#game {
+  background-color: rgba(255,255,255,0.05);
+  padding: 20px;
+  border-radius: 12px;
+  margin-top: 30px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+#game h2 {
+  color: #00ffff;
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+#game p {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.game-link {
+  color: #f0db4f;
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.game-link:hover {
+  color: white;
+  text-shadow: 0 0 5px #f0db4f;
 }
