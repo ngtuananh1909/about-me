@@ -4,9 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My game</title>
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/style-game.css">
 </head>
 <body>
-    <button></button>
+    <div id="info">
+        <div class="container">
+            <img src="/picture/avatar.png" alt="my avatar" title="TuanAnh" id ="avatar">
+        </div>   
+        <div class="name">
+            <p>Nguyen Tuan Anh</p>
+            <!-- <p>Web Developer</p> -->
+        </div> 
+    </div>
+    <ul class="game-list">
+        <li class="game"><button onclick="showGame('genshin.png')">Genshin</button></li>
+        <li class="game"><button onclick="showGame('lienquan.png')">Liên Quân</button></li>
+    </ul>
+
+    <!-- Modal hiện ảnh -->
+    <div id="game-modal" class="modal" onclick="hideModal()">
+        <img id="game-image" src="" alt="Game Image" />
+    </div>
 </body>
+<script src="/js/script-game.js"></script>
 </html>

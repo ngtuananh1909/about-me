@@ -1,0 +1,94 @@
+.game-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+
+.game-list .game button {
+  background: linear-gradient(to right, #00c6ff, #0072ff);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  font-size: 1rem;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: 0.3s;
+  font-weight: bold;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+}
+
+.game-list .game button:hover {
+  transform: scale(1.05);
+  background: linear-gradient(to right, #0072ff, #00c6ff);
+  box-shadow: 0 0 15px #00ffff;
+}
+* {
+    box-sizing: border-box;
+    text-align: center;      /* 👈 Canh giữa nội dung bên trong */
+    width: 100%;   
+}
+body {
+    background-color: #006676;
+    font-family: Arial, sans-serif;
+    color: white;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+img#avatar {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 3px solid white;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease;
+}
+
+img#avatar:hover {
+    transform: scale(1.05);
+}
+
+#info {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.name {
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;      /* 👈 Canh giữa nội dung bên trong */
+    width: 100%;             /* 👈 Đảm bảo nó đủ rộng để nằm giữa */
+    margin-top: 10px;
+}
+.modal {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  background-color: rgba(0, 0, 0, 0.85);
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  cursor: pointer;
+}
+
+.modal img {
+  max-width: 80%;
+  max-height: 80%;
+  border-radius: 12px;
+  border: 3px solid #fff;
+  box-shadow: 0 0 20px #00ffff;
+}
