@@ -2,7 +2,7 @@
 function showGame(imageName) {
   const modal = document.getElementById("game-modal");
   const img = document.getElementById("game-image");
-  img.src = "/picture/" + imageName;
+  img.src = "picture/" + imageName;
   modal.style.display = "flex";
 }
 
