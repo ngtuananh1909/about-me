@@ -1,22 +1,34 @@
 * {
     box-sizing: border-box;
-    text-align: center;      /* 👈 Canh giữa nội dung bên trong */
-    width: 100%;   
+    margin: 0;
+    padding: 0;
 }
+
 body {
     background-color: #006676;
     font-family: Arial, sans-serif;
     color: white;
-    margin: 0;
     padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.main-container {
+    width: 100%;
+    max-width: 1200px; /* Giới hạn chiều rộng tối đa */
+}
+
+#info-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 30px;
 }
 
 .container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 20px;
-    width: 100%;
+    flex-shrink: 0; /* Ngăn avatar bị co lại */
 }
 
 img#avatar {
@@ -25,78 +37,87 @@ img#avatar {
     border-radius: 50%;
     border: 3px solid white;
     box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 img#avatar:hover {
-    transform: scale(1.05);
+    transform: scale(1.1);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.5);
 }
 
-#info {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    flex-wrap: wrap;
+.details {
+    text-align: left;
 }
 
-.name {
-    color: #fff;
-    font-size: 1.5rem;
+.details h2 {
+    color: #00ffff;
+    margin-bottom: 10px;
+}
+
+.details p {
+    line-height: 1.6;
+}
+
+.name p {
+    font-size: 2rem;
     font-weight: bold;
-    text-align: center;      /* 👈 Canh giữa nội dung bên trong */
-    width: 100%;             /* 👈 Đảm bảo nó đủ rộng để nằm giữa */
-    margin-top: 10px;
+    margin-bottom: 20px;
+    text-align: left;
 }
 
-#achievement {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-    /* width: 20%; */
-}
-.thanh_tich {
-    padding: 10px;
-    border-radius: 8px;
-    text-align: center;
-    width: 200px;
-}
-#social {
-  background-color: rgba(255, 255, 255, 0.05);
-  border-radius: 12px;
-  padding: 20px;
-  margin-top: 30px;
-  text-align: center;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+/* Hiệu ứng cho các phần tử khác (giữ nguyên và thêm hiệu ứng) */
+#achievement, #social, #about, #game {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    padding: 20px;
+    margin-top: 30px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-#social h2 {
-  color: #00ffff;
-  margin-bottom: 15px;
+#achievement:hover, #social:hover, #about:hover, #game:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+}
+
+#social h2, #game h2 {
+    color: #00ffff;
+    margin-bottom: 15px;
 }
 
 .social-links {
-  list-style: none;
-  padding: 0;
-  margin-bottom: 15px;
+    list-style: none;
 }
 
 .social-links li {
-  margin: 8px 0;
+    margin: 8px 0;
 }
 
 .social-links a {
-  color: #ffffff;
-  text-decoration: none;
-  font-weight: bold;
-  transition: all 0.3s ease;
-  font-size: 18px;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    font-size: 18px;
+    display: inline-block;
 }
 
 .social-links a:hover {
-  color: #00ffff;
-  transform: scale(1.05);
-  text-shadow: 0 0 5px #00ffff;
+    color: #00ffff;
+    transform: translateX(5px);
+    text-shadow: 0 0 5px #00ffff;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #info-wrapper {
+        flex-direction: column; /* Chuyển sang bố cục dọc */
+        text-align: center;
+    }
+
+    .details, .name p {
+        text-align: center; /* Căn giữa nội dung khi màn hình nhỏ */
+    }
 }
 
 .about-link {
@@ -189,4 +210,100 @@ img#avatar:hover {
 .game-link:hover {
   color: white;
   text-shadow: 0 0 5px #f0db4f;
+}
+#donate {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    padding: 25px;
+    margin-top: 30px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-top: 3px solid #00ffff; /* Thêm điểm nhấn màu sắc */
+}
+
+#donate:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+}
+
+#donate h2 {
+    color: #00ffff;
+    margin-bottom: 15px;
+    font-size: 1.8rem;
+}
+
+#donate p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #f0f0f0;
+}
+
+.kofi-link {
+    color: #f0db4f; /* Màu vàng đặc trưng */
+    text-decoration: none;
+    font-weight: bold;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+/* Hiệu ứng gạch chân khi hover */
+.kofi-link::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #f0db4f;
+    bottom: -3px;
+    left: 0;
+    transform: scaleX(0); /* Ban đầu ẩn gạch chân */
+    transform-origin: right;
+    transition: transform 0.3s ease-in-out;
+}
+
+.kofi-link:hover {
+    color: #fff;
+}
+
+.kofi-link:hover::after {
+    transform: scaleX(1); /* Hiện gạch chân từ phải qua trái */
+    transform-origin: left;
+}
+#donate {
+    background: linear-gradient(145deg, rgba(0, 255, 191, 0.1), rgba(0, 102, 118, 0.2));
+    border-radius: 12px;
+    padding: 30px;
+    margin-top: 30px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+#donate h2 {
+    color: #ffffff;
+    font-size: 2rem;
+    margin-bottom: 10px;
+    text-shadow: 0 0 5px #00ffbf;
+}
+
+#donate p {
+    font-size: 1.1rem;
+    margin-bottom: 25px; /* Tăng khoảng cách với nút bấm */
+}
+
+.kofi-link {
+    display: inline-block; /* Để áp dụng padding và style như nút */
+    background-color: #f0db4f; /* Màu vàng của Ko-fi */
+    color: #000;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 12px 25px;
+    border-radius: 25px; /* Bo tròn các góc */
+    box-shadow: 0 4px 10px rgba(240, 219, 79, 0.3);
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.kofi-link:hover {
+    background-color: #ffd900;
+    transform: scale(1.05) translateY(-3px);
+    box-shadow: 0 6px 15px rgba(240, 219, 79, 0.5);
 }

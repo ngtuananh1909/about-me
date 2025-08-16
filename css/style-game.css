@@ -1,94 +1,169 @@
-.game-list {
-  list-style: none;
-  padding: 0;
-  display: flex;
-  gap: 15px;
-  justify-content: center;
-}
-
-.game-list .game button {
-  background: linear-gradient(to right, #00c6ff, #0072ff);
-  color: white;
-  border: none;
-  padding: 12px 24px;
-  font-size: 1rem;
-  border-radius: 12px;
-  cursor: pointer;
-  transition: 0.3s;
-  font-weight: bold;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.4);
-}
-
-.game-list .game button:hover {
-  transform: scale(1.05);
-  background: linear-gradient(to right, #0072ff, #00c6ff);
-  box-shadow: 0 0 15px #00ffff;
-}
+/* === THIẾT LẬP CHUNG & BODY === */
 * {
     box-sizing: border-box;
-    text-align: center;      /* 👈 Canh giữa nội dung bên trong */
-    width: 100%;   
+    margin: 0;
+    padding: 0;
 }
+
 body {
     background-color: #006676;
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: white;
-    margin: 0;
     padding: 20px;
 }
 
-.container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 20px;
+.main-container {
     width: 100%;
+    max-width: 900px;
+    margin: 0 auto; /* Căn giữa container chính */
 }
 
-img#avatar {
+/* === KHỐI THÔNG TIN CÁ NHÂN (#info-wrapper) === */
+#info-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 50px;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+}
+
+#avatar {
     width: 150px;
     height: 150px;
     border-radius: 50%;
-    border: 3px solid white;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    border: 4px solid #00ffff;
+    box-shadow: 0 5px 20px rgba(0, 255, 255, 0.3);
     transition: transform 0.3s ease;
 }
 
-img#avatar:hover {
-    transform: scale(1.05);
+#avatar:hover {
+    transform: scale(1.1);
 }
 
-#info {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    flex-wrap: wrap;
+.details {
+    text-align: left;
 }
 
-.name {
-    color: #fff;
-    font-size: 1.5rem;
+.name p {
+    font-size: 2.5rem;
     font-weight: bold;
-    text-align: center;      /* 👈 Canh giữa nội dung bên trong */
-    width: 100%;             /* 👈 Đảm bảo nó đủ rộng để nằm giữa */
-    margin-top: 10px;
 }
+
+/* === KHỐI DANH SÁCH GAME === */
+#game-section {
+    text-align: center;
+}
+
+#game-section h2 {
+    font-size: 2rem;
+    color: #00ffff;
+    margin-bottom: 30px;
+}
+
+.game-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.game-item {
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.game-item:hover {
+    transform: translateY(-10px);
+}
+
+.game-item img {
+    width: 250px;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 12px;
+    border: 2px solid transparent;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.game-item .game-name {
+    display: block;
+    margin-top: 10px;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.game-item:hover img {
+    border-color: #00ffff;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.6);
+}
+
+/* === MODAL FOR IMAGE ZOOM (ĐÃ CẬP NHẬT) === */
 .modal {
-  display: none;
-  position: fixed;
-  top: 0; left: 0;
-  width: 100vw; height: 100vh;
-  background-color: rgba(0, 0, 0, 0.85);
-  justify-content: center;
-  align-items: center;
-  z-index: 999;
-  cursor: pointer;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85);
+    z-index: 1000;
+
+    /* CÁCH CĂN GIỮA HOÀN HẢO */
+    display: flex;
+    justify-content: center; /* Căn giữa theo chiều ngang */
+    align-items: center;    /* Căn giữa theo chiều dọc */
+    
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+
+.modal.show {
+    opacity: 1;
+    visibility: visible;
 }
 
 .modal img {
-  max-width: 80%;
-  max-height: 80%;
-  border-radius: 12px;
-  border: 3px solid #fff;
-  box-shadow: 0 0 20px #00ffff;
+    /* KÍCH THƯỚC VỪA ĐỦ MÀN HÌNH (80%) */
+    max-width: 80vw;   /* Tối đa 80% chiều rộng màn hình */
+    max-height: 80vh;  /* Tối đa 80% chiều cao màn hình */
+
+    border-radius: 12px;
+    border: 3px solid #fff;
+    box-shadow: 0 0 30px rgba(0, 255, 255, 0.5);
+    
+    transform: scale(0.7);
+    transition: transform 0.4s ease;
+}
+
+.modal.show img {
+    transform: scale(1);
+}
+
+.close-button {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+.close-button:hover {
+    color: #ff4d4d;
+}
+
+/* === RESPONSIVE CHO MÀN HÌNH NHỎ === */
+@media (max-width: 600px) {
+    #info-wrapper {
+        flex-direction: column;
+        text-align: center;
+    }
+    .details {
+        text-align: center;
+    }
 }

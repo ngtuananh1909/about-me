@@ -3,28 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My game</title>
+    <title>My Games - Tuan Anh</title>
     <link rel="stylesheet" href="css/style-game.css">
 </head>
 <body>
-    <div id="info">
-        <div class="container">
-            <img src="picture/avatar.png" alt="my avatar" title="TuanAnh" id ="avatar">
-        </div>   
-        <div class="name">
-            <p>Nguyen Tuan Anh</p>
-            <!-- <p>Web Developer</p> -->
-        </div> 
-    </div>
-    <ul class="game-list">
-        <li class="game"><button onclick="showGame('genshin.png')">Genshin</button></li>
-        <li class="game"><button onclick="showGame('lienquan.png')">Liên Quân</button></li>
-    </ul>
 
-    <!-- Modal hiện ảnh -->
-    <div id="game-modal" class="modal" onclick="hideModal()">
-        <img id="game-image" src="" alt="Game Image" />
+    <div class="main-container">
+        <!-- KHỐI THÔNG TIN CÁ NHÂN -->
+        <div id="info-wrapper">
+            <div class="avatar-container">
+                <img src="picture/avatar.png" alt="my avatar" title="TuanAnh" id="avatar">
+            </div>
+            <div class="details">
+                <div class="name">
+                    <p>Nguyen Tuan Anh</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- KHỐI DANH SÁCH GAME -->
+        <div id="game-section">
+            <h2>My Games</h2>
+            <ul class="game-list">
+                <!-- Game 1 -->
+                <li class="game-item" onclick="showGame('genshin.png')">
+                    <img src="picture/genshin.png" alt="Genshin Impact">
+                    <span class="game-name">Genshin Impact</span>
+                </li>
+
+                <!-- Game 2 -->
+                <li class="game-item" onclick="showGame('lienquan.png')">
+                    <img src="picture/lienquan.png" alt="Liên Quân Mobile">
+                    <span class="game-name">Liên Quân Mobile</span>
+                </li>
+            </ul>
+        </div>
     </div>
+
+    <!-- MODAL HIỆN ẢNH -->
+    <!-- ĐÃ XÓA onclick="hideModal()" khỏi đây -->
+    <div id="game-modal" class="modal">
+        <span class="close-button">&times;</span>
+        <img id="game-image" src="" alt="Game Image Zoomed">
+    </div>
+
+    <script src="js/script-game.js"></script>
+
 </body>
-<script src="js/script-game.js"></script>
 </html>
