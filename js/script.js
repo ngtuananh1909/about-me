@@ -8,12 +8,3 @@ function openModal(src) {
 function closeModal() {
   document.getElementById("modal").style.display = "none";
 }
-const avatar = document.getElementById('avatar');
-  
-  avatar.addEventListener('mouseenter', () => {
-    avatar.src = '/picture/avatar2.png';
-  });
-
-  avatar.addEventListener('mouseleave', () => {
-    avatar.src = '/picture/avatar3.png';
-  });
