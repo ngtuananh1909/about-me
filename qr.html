@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Make_qr</title>
+    <link rel="stylesheet" href="/css/style-game.css">
+    <link rel="stylesheet" href="/css/style_qr.css">
+</head>
+<body>
+
+    <div class="main-container">
+        <!-- KHỐI THÔNG TIN CÁ NHÂN -->
+        <div id="info-wrapper">
+            <div class="avatar-container">
+                <img src="/picture/avatar.png" alt="my avatar" title="TuanAnh" id="avatar">
+            </div>
+            <div class="details">
+                <div class="name">
+                    <p>Nguyen Tuan Anh</p>
+                </div>
+            </div>
+        </div>
+
+        <h2>Make QR code for URL</h2>
+        <input id="url_input" type="text" placeholder="Nhập URL hoặc text..." size="40">
+        <button id="btn_make">Tạo QR</button>
+
+        <div id="make_qr" style="display: none;"></div>
+
+        <script src="https://cdn.jsdelivr.net/gh/davidshimjs/qrcodejs/qrcode.min.js"></script>
+
+        <script src="/js/script_qr.js"></script>
+
+    </div>
+
+</body>
