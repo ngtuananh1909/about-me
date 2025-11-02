@@ -25,7 +25,7 @@ btn.addEventListener('click', () => {
     text: text,
     width: 256,
     height: 256,
-    colorDark: "#00f260",
+    colorDark: "#000000ff",
     colorLight: "#ffffff",
     correctLevel: QRCode.CorrectLevel.H,
   });
