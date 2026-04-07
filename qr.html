@@ -3,36 +3,95 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Make_qr</title>
-    <link rel="stylesheet" href="css/style-game.css">
-    <link rel="stylesheet" href="css/style_qr.css">
+    <title>QR Generator | Nguyen Tuan Anh</title>
+    <link rel="stylesheet" href="/src/css/main.css">
+    <!-- QR Code Script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Fira+Code&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="font-sans bg-grid min-h-screen flex flex-col">
+    <nav class="p-6">
+        <a href="index.html" class="flex items-center gap-2 text-tech-muted hover:text-tech-accent transition-colors font-bold uppercase tracking-widest text-sm">
+            <i data-lucide="external-link" class="w-4 h-4 rotate-180"></i>
+            Back to Portfolio
+        </a>
+    </nav>
 
-    <div class="main-container">
-        <!-- KHỐI THÔNG TIN CÁ NHÂN -->
-        <div id="info-wrapper">
-            <div class="avatar-container">
-                <img src="picture/avatar2.png" alt="my avatar" title="TuanAnh" id="avatar">
+    <main class="flex-grow flex flex-col items-center justify-center max-w-2xl mx-auto px-6 py-12 space-y-12">
+        <header class="text-center space-y-4">
+            <div class="inline-flex p-3 bg-tech-accent/10 rounded-2xl text-tech-accent mb-4">
+                <i data-lucide="binary" class="w-10 h-10"></i>
             </div>
-            <div class="details">
-                <div class="name">
-                    <p>Nguyen Tuan Anh</p>
-                </div>
+            <h1 class="text-5xl font-extrabold tracking-tighter">QR <span class="text-tech-accent">Encoder</span></h1>
+            <p class="text-tech-muted">Turn any URL into a scannable technical identity.</p>
+        </header>
+
+        <div class="w-full glass-panel p-8 space-y-6">
+            <div class="space-y-2">
+                <label for="url_input" class="text-xs font-mono uppercase tracking-widest text-tech-muted">Source URL / Text</label>
+                <input type="text" id="url_input" placeholder="https://example.com" class="w-full rounded-xl px-4 py-3 focus:outline-none transition-all font-mono" style="background-color: var(--bg-color); color: var(--text-color); border: 1px solid var(--card-border);">
             </div>
+            <button id="btn_make" class="btn-primary w-full py-4 text-lg">Generate QR Code</button>
         </div>
 
-        <h2>Make QR code for URL</h2>
-        <input id="url_input" type="text" placeholder="✎Write you URL or text..." size="40">
-        <button id="btn_make">Tạo QR</button>
+        <div id="qr-container" class="hidden flex-col items-center space-y-8 animate-in fade-in zoom-in duration-500">
+            <div class="p-6 bg-white rounded-2xl shadow-[0_0_50px_rgba(255,255,255,0.1)]">
+                <div id="make_qr" class="w-64 h-64"></div>
+            </div>
+            <button id="btn_download" class="flex items-center gap-2 px-6 py-2 border border-white/10 rounded-lg hover:bg-white/5 transition-colors font-semibold text-tech-muted hover:text-white">
+                <i data-lucide="external-link" class="w-4 h-4"></i>
+                Download Image (.png)
+            </button>
+        </div>
+    </main>
 
-        <div id="make_qr" style="display: none;"></div>
+    <footer class="p-12 text-center text-tech-muted text-xs">
+        © 2026 Nguyen Tuan Anh. Engineered for the community.
+    </footer>
 
-        <script src="https://cdn.jsdelivr.net/gh/davidshimjs/qrcodejs/qrcode.min.js"></script>
+    <script type="module" src="/src/js/main.js"></script>
+    <script>
+        const qrDiv = document.getElementById('make_qr');
+        const btn = document.getElementById('btn_make');
+        const input = document.getElementById('url_input');
+        const container = document.getElementById('qr-container');
+        const downloadBtn = document.getElementById('btn_download');
 
-        <script src="js/script_qr.js"></script>
-        <script src="js/script_changepic.js"></script>
+        btn.addEventListener('click', () => {
+            const text = input.value.trim();
+            if (!text) {
+                alert("⚠️ Please enter a URL or text!");
+                return;
+            }
 
-    </div>
+            qrDiv.innerHTML = "";
+            new QRCode(qrDiv, {
+                text: text,
+                width: 256,
+                height: 256,
+                colorDark: "#000000",
+                colorLight: "#ffffff",
+                correctLevel: QRCode.CorrectLevel.H,
+            });
 
+            container.classList.remove('hidden');
+            container.classList.add('flex');
+            
+            // Scroll to QR
+            container.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        });
+
+        downloadBtn.addEventListener('click', () => {
+            const canvas = qrDiv.querySelector('canvas');
+            if (canvas) {
+                const a = document.createElement("a");
+                a.href = canvas.toDataURL("image/png");
+                a.download = "qrcode-bytuananh.png";
+                a.click();
+            } else {
+                alert("Error generating download link 😢");
+            }
+        });
+    </script>
 </body>
+</html>

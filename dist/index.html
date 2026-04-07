@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nguyen Tuan Anh | Software Engineer & CP Enthusiast</title>
+    <meta name="description" content="Portfolio of Nguyen Tuan Anh - Software Engineer passionate about Algorithms, Linux, and Modern Web Development.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    
+    <!-- Favicon (placeholder/existing) -->
+    <link rel="icon" type="image/png" href="/assets/avatar2.png">
+  <script type="module" crossorigin src="/assets/main-DPGunExB.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/main-CIChEmzR.css">
+</head>
+<body class="bg-tech-bg text-white selection:bg-tech-accent/30 selection:text-tech-accent bg-grid">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 glass-panel !rounded-none border-t-0 border-x-0 px-6 py-4 flex justify-between items-center">
+        <a href="#" class="text-xl font-extrabold tracking-tighter hover:text-tech-accent transition-colors">
+            NTA<span class="text-tech-accent">.</span>
+        </a>
+        <div class="hidden md:flex gap-8 text-sm font-semibold uppercase tracking-widest text-tech-muted">
+            <a href="#about" class="hover:text-white transition-colors">About</a>
+            <a href="#skills" class="hover:text-white transition-colors">Skills</a>
+            <a href="#projects" class="hover:text-white transition-colors">Projects</a>
+            <a href="#achievements" class="hover:text-white transition-colors">Achievements</a>
+            <a href="#contact" class="hover:text-white transition-colors">Contact</a>
+        </div>
+        <div class="flex items-center gap-4">
+            <button id="theme-toggle" class="p-2 hover:bg-white/5 rounded-lg transition-colors" aria-label="Toggle Dark Mode">
+                <i data-lucide="sun" class="w-5 h-5 hidden dark:block"></i>
+                <i data-lucide="moon" class="w-5 h-5 block dark:hidden"></i>
+            </button>
+            <a href="https://github.com/ngtuananh1909" target="_blank" class="btn-primary flex items-center gap-2">
+                <i data-lucide="github" class="w-4 h-4"></i>
+                <span>Hire Me</span>
+            </a>
+        </div>
+    </nav>
+
+    <main class="pt-24 max-w-7xl mx-auto px-6 space-y-32 mb-32">
+        <!-- Hero Section -->
+        <section id="hero" class="min-h-[70vh] flex flex-col items-center justify-center text-center space-y-8" data-aos="fade-up">
+            <div class="relative group">
+                <div class="absolute -inset-1 bg-gradient-to-r from-tech-accent to-tech-secondary rounded-full blur opacity-25 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
+                <img src="/assets/avatar2.png" alt="Nguyen Tuan Anh" class="relative w-40 h-40 rounded-full border-2 border-white/10 shadow-2xl grayscale group-hover:grayscale-0 transition-all duration-500">
+            </div>
+            <div class="space-y-4">
+                <h2 class="text-tech-accent font-mono text-lg tracking-widest" data-aos="fade-up" data-aos-delay="200">HELLO_WORLD.EXE</h2>
+                <h1 class="text-5xl md:text-7xl font-extrabold tracking-tighter" data-aos="fade-up" data-aos-delay="400">
+                    I'm <span class="accent-text glow-text">Tuan Anh</span>
+                </h1>
+                <p class="text-xl text-tech-muted max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="600">
+                    Software Engineer & Algorithm Enthusiast. Building high-performance solutions and exploring the depths of Linux environments.
+                </p>
+            </div>
+            <div class="flex gap-4" data-aos="fade-up" data-aos-delay="800">
+                <a href="#projects" class="btn-primary">View Projects</a>
+                <a href="#contact" class="px-6 py-2 border border-white/10 rounded-lg hover:bg-white/5 transition-colors font-semibold">Contact Me</a>
+            </div>
+        </section>
+
+        <!-- Terminal Section -->
+        <section id="terminal-section" class="scroll-mt-32" data-aos="fade-up">
+            <div class="terminal-window max-w-3xl mx-auto">
+                <div class="terminal-header">
+                    <div class="terminal-dot bg-[#FF5F56]"></div>
+                    <div class="terminal-dot bg-[#FFBD2E]"></div>
+                    <div class="terminal-dot bg-[#27C93F]"></div>
+                    <span class="ml-auto text-xs text-tech-muted">zsh — 80x24</span>
+                </div>
+                <div id="terminal-body" class="terminal-body min-h-[300px]">
+                    <!-- Typing effect happens here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- About / Linux Section -->
+        <section id="about" class="grid md:grid-cols-2 gap-12 items-center">
+            <div data-aos="fade-right">
+                <h2 class="text-3xl font-bold mb-6 flex items-center gap-3">
+                    <i data-lucide="terminal-icon" class="text-tech-accent"></i>
+                    The Linux Way
+                </h2>
+                <p class="text-tech-muted leading-relaxed mb-6">
+                    Passion for computers started early. I don't just use software; I want to understand how it communicates with the kernel. My journey is rooted in the **Ubuntu/Linux** ecosystem, where I've learned that everything is a file and the command line is the most powerful tool.
+                </p>
+                <div class="space-y-3">
+                    <div class="flex items-center gap-3 text-sm">
+                        <i data-lucide="cpu" class="text-tech-accent w-4 h-4"></i>
+                        <span>System optimization and shell scripting</span>
+                    </div>
+                    <div class="flex items-center gap-3 text-sm">
+                        <i data-lucide="binary" class="text-tech-accent w-4 h-4"></i>
+                        <span>Deep dive into memory management and OS internals</span>
+                    </div>
+                </div>
+            </div>
+            <div class="glass-panel p-8" data-aos="fade-left">
+                <pre class="font-mono text-xs text-tech-secondary overflow-x-auto">
+<code>$ neofetch
+<span class="text-tech-accent">            .-/+oossssoo+/-.</span>
+<span class="text-tech-accent">        `:+ssssssssssssssssss+:`</span>
+<span class="text-tech-accent">      -+ssssssssssssssssssyyssss+-</span>
+<span class="text-tech-accent">    .ossssssssssshdyysdmmhssssssso.</span>
+<span class="text-tech-accent">   /sssssssssshmdhyhmmdhyssssssssh/</span>
+<span class="text-tech-accent">  +ssssssssyhNd8888888888888dhyssssss+</span>
+<span class="text-tech-accent"> /ssssssssd8888888888888888888888888888s\</span>
+<span class="text-tech-accent"> ssssssssh88888888888888888888888888888s</span>
+
+<span class="font-bold">OS</span>: Ubuntu 24.04 LTS x86_64
+<span class="font-bold">Host</span>: Custom Build
+<span class="font-bold">Kernel</span>: 6.8.0-generic
+<span class="font-bold">Shell</span>: zsh 5.9
+<span class="font-bold">CPU</span>: AMD Ryzen 7
+<span class="font-bold">Memory</span>: 16GB
+</code></pre>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="scroll-mt-32">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl font-bold mb-4">Core Tech <span class="text-tech-accent">Stack</span></h2>
+                <p class="text-tech-muted">Languages and tools I use to build robust software.</p>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <!-- Skill Card 1 -->
+                <div class="tech-card flex flex-col items-center gap-4 text-center" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="w-12 h-12 bg-blue-500/10 rounded-lg flex items-center justify-center text-blue-500">
+                        <i data-lucide="code2" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="font-bold">C++</h3>
+                    <p class="text-xs text-tech-muted">Competitive Programming & Systems</p>
+                </div>
+                <!-- Skill Card 2 -->
+                <div class="tech-card flex flex-col items-center gap-4 text-center" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="w-12 h-12 bg-yellow-500/10 rounded-lg flex items-center justify-center text-yellow-500">
+                        <i data-lucide="code2" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="font-bold">Python</h3>
+                    <p class="text-xs text-tech-muted">AI/ML & Automation Scripts</p>
+                </div>
+                <!-- Skill Card 3 -->
+                <div class="tech-card flex flex-col items-center gap-4 text-center" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="w-12 h-12 bg-orange-500/10 rounded-lg flex items-center justify-center text-orange-500">
+                        <i data-lucide="coffee" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="font-bold">Java</h3>
+                    <p class="text-xs text-tech-muted">Backend & Enterprise Apps</p>
+                </div>
+                <!-- Skill Card 4 -->
+                <div class="tech-card flex flex-col items-center gap-4 text-center" data-aos="zoom-in" data-aos-delay="400">
+                    <div class="w-12 h-12 bg-tech-accent/10 rounded-lg flex items-center justify-center text-tech-accent">
+                        <i data-lucide="layout" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="font-bold">Web Stack</h3>
+                    <p class="text-xs text-tech-muted">HTML, Tailwind, JS/TS</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Section (Codeforces/LeetCode) -->
+        <section id="stats" class="bg-tech-card border border-white/5 rounded-3xl p-12 text-center" data-aos="fade-up">
+            <h2 class="text-2xl font-bold mb-12 flex items-center justify-center gap-3">
+                <i data-lucide="binary" class="text-tech-accent"></i>
+                Competitive Stats
+            </h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="space-y-2">
+                    <p class="text-tech-muted text-sm uppercase tracking-tighter">Current Rank</p>
+                    <p id="cf-rank" class="text-3xl font-extrabold text-tech-accent">---</p>
+                </div>
+                <div class="space-y-2">
+                    <p class="text-tech-muted text-sm uppercase tracking-tighter">Rating</p>
+                    <p id="cf-rating" class="text-3xl font-extrabold text-tech-secondary">---</p>
+                </div>
+                <div class="space-y-2">
+                    <p class="text-tech-muted text-sm uppercase tracking-tighter">Max Rank</p>
+                    <p id="cf-max-rank" class="text-3xl font-extrabold text-purple-400">---</p>
+                </div>
+            </div>
+            <div class="mt-12 flex justify-center gap-6">
+                <img src="https://img.shields.io/badge/Codeforces-ngtuananh1909-blue?style=for-the-badge&logo=codeforces" alt="Codeforces">
+                <img src="https://img.shields.io/badge/LeetCode-ngtuananh1909-orange?style=for-the-badge&logo=leetcode" alt="LeetCode">
+            </div>
+        </section>
+
+        <!-- Projects Showcase -->
+        <section id="projects" class="scroll-mt-32">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-16" data-aos="fade-up">
+                <div class="space-y-4">
+                    <h2 class="text-4xl font-bold">Featured <span class="text-tech-accent">Projects</span></h2>
+                    <p class="text-tech-muted">Cutting-edge tools I've engineered recently.</p>
+                </div>
+                <a href="https://github.com/ngtuananh1909" target="_blank" class="flex items-center gap-2 text-tech-accent font-semibold hover:underline mt-4 md:mt-0">
+                    Explore all projects <i data-lucide="external-link" class="w-4 h-4"></i>
+                </a>
+            </div>
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Project Card 1 -->
+                <div class="tech-card group overflow-hidden p-0" data-aos="fade-up">
+                    <div class="p-8 space-y-6">
+                        <div class="flex justify-between items-start">
+                            <div class="w-12 h-12 bg-tech-accent/10 rounded-xl flex items-center justify-center text-tech-accent">
+                                <i data-lucide="github" class="w-6 h-6"></i>
+                            </div>
+                            <span class="text-xs font-mono text-tech-muted bg-white/5 px-3 py-1 rounded-full">Python • AI</span>
+                        </div>
+                        <h3 class="text-2xl font-bold group-hover:text-tech-accent transition-colors">VibeCode-AI</h3>
+                        <p class="text-tech-muted leading-relaxed">
+                            An intelligent coding assistant designed to optimize developer workflow using state-of-the-art LLMs. Focuses on code quality and rapid prototyping.
+                        </p>
+                        <div class="flex gap-4">
+                            <a href="https://github.com/ngtuananh1909/VibeCode-AI" target="_blank" class="flex items-center gap-2 text-sm font-bold text-white hover:text-tech-accent transition-colors">
+                                <i data-lucide="github" class="w-4 h-4"></i> Source
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project Card 2 -->
+                <div class="tech-card group overflow-hidden p-0" data-aos="fade-up" data-aos-delay="200">
+                    <div class="p-8 space-y-6">
+                        <div class="flex justify-between items-start">
+                            <div class="w-12 h-12 bg-tech-secondary/10 rounded-xl flex items-center justify-center text-tech-secondary">
+                                <i data-lucide="github" class="w-6 h-6"></i>
+                            </div>
+                            <span class="text-xs font-mono text-tech-muted bg-white/5 px-3 py-1 rounded-full">C++ • Systems</span>
+                        </div>
+                        <h3 class="text-2xl font-bold group-hover:text-tech-secondary transition-colors">Vibecode_Zooteam</h3>
+                        <p class="text-tech-muted leading-relaxed">
+                            Collaborative platform for competitive programmers and small engineering teams to track progress and share algorithmic solutions.
+                        </p>
+                        <div class="flex gap-4">
+                            <a href="https://github.com/ngtuananh1909/Vibecode_ZooTeam" target="_blank" class="flex items-center gap-2 text-sm font-bold text-white hover:text-tech-secondary transition-colors">
+                                <i data-lucide="github" class="w-4 h-4"></i> Source
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Achievements Section -->
+        <section id="achievements" class="scroll-mt-32">
+            <h2 class="text-4xl font-bold text-center mb-16" data-aos="fade-up">Hall of <span class="text-tech-accent">Awards</span></h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Achievement Card 1 -->
+                <div class="glass-panel p-1 flex gap-6 items-center" data-aos="fade-right">
+                    <img src="/assets/thanh-tich-1.png" alt="OLP Achievement" class="w-24 h-24 rounded-l-2xl object-cover border-r border-white/10">
+                    <div class="p-4">
+                        <h3 class="font-bold text-tech-accent">Olympic 6/4 Prize</h3>
+                        <p class="text-xs text-tech-muted mt-1">Excellent Performance in Local Algorithms Competition</p>
+                    </div>
+                </div>
+                <!-- Achievement Card 2 -->
+                <div class="glass-panel p-1 flex gap-6 items-center" data-aos="fade-left">
+                    <img src="/assets/thanh-tich-2.png" alt="Tin Học Trẻ Achievement" class="w-24 h-24 rounded-l-2xl object-cover border-r border-white/10">
+                    <div class="p-4">
+                        <h3 class="font-bold text-tech-secondary">Tin Học Trẻ (🥉)</h3>
+                        <p class="text-xs text-tech-muted mt-1">National Youth Informatics Competition - Bronze Medal</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Connect Section -->
+        <section id="contact" class="scroll-mt-32 text-center space-y-12">
+            <div class="space-y-4" data-aos="fade-up">
+                <h2 class="text-4xl font-extrabold tracking-tighter">Get in <span class="text-tech-accent">Touch</span></h2>
+                <p class="text-tech-muted max-w-lg mx-auto">Open for collaborations, interesting projects, or just a tech chat. My inbox is always open.</p>
+            </div>
+            <div class="flex flex-wrap justify-center gap-6" data-aos="fade-up" data-aos-delay="200">
+                <a href="mailto:tuananh190907@gmail.com" class="tech-card flex items-center gap-3 !px-8 hover:bg-white/5">
+                    <i data-lucide="mail" class="text-tech-accent"></i>
+                    <span>Email Me</span>
+                </a>
+                <a href="https://github.com/ngtuananh1909" target="_blank" class="tech-card flex items-center gap-3 !px-8 hover:bg-white/5">
+                    <i data-lucide="github" class="text-tech-accent"></i>
+                    <span>Github</span>
+                </a>
+                <a href="https://www.facebook.com/tuan.anh.19092007" target="_blank" class="tech-card flex items-center gap-3 !px-8 hover:bg-white/5">
+                    <i data-lucide="facebook" class="text-tech-accent text-blue-500"></i>
+                    <span>Facebook</span>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-white/5 py-12 text-center text-tech-muted text-sm px-6">
+        <p>© 2026 Nguyen Tuan Anh. Built with <span class="text-tech-accent">Vite</span> + <span class="text-tech-accent">Tailwind CSS</span>.</p>
+        <div class="mt-4 flex justify-center gap-6">
+            <a href="https://ko-fi.com/ngtuananh1909" target="_blank" class="hover:text-tech-accent transition-colors">Donate</a>
+            <a href="game.html" class="hover:text-tech-accent transition-colors">My Games</a>
+            <a href="qr.html" class="hover:text-tech-accent transition-colors">Make QR</a>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+</body>
+</html>

@@ -3,51 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Games</title>
-    <link rel="stylesheet" href="css/style-game.css">
+    <title>My Games | Nguyen Tuan Anh</title>
+    <link rel="stylesheet" href="/src/css/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="font-sans bg-grid min-h-screen flex flex-col">
+    <nav class="p-6">
+        <a href="index.html" class="flex items-center gap-2 text-tech-muted hover:text-tech-accent transition-colors font-bold uppercase tracking-widest text-sm">
+            <i data-lucide="external-link" class="w-4 h-4 rotate-180"></i>
+            Back to Portfolio
+        </a>
+    </nav>
 
-    <div class="main-container">
-        <!-- KHỐI THÔNG TIN CÁ NHÂN -->
-        <div id="info-wrapper">
-            <div class="avatar-container">
-                <img src="picture/avatar2.png" alt="my avatar" title="TuanAnh" id="avatar">
-            </div>
-            <div class="details">
-                <div class="name">
-                    <p>Nguyen Tuan Anh</p>
+    <main class="flex-grow max-w-4xl mx-auto px-6 py-12 space-y-12">
+        <header class="text-center space-y-4">
+            <h1 class="text-5xl font-extrabold tracking-tighter">My <span class="text-tech-accent">Games</span></h1>
+            <p class="text-tech-muted">A collection of worlds I've explored and enjoyed.</p>
+        </header>
+
+        <div class="grid md:grid-cols-2 gap-8">
+            <!-- Game 1 -->
+            <div class="tech-card group cursor-pointer" onclick="showGame('/assets/genshin.png')">
+                <div class="relative overflow-hidden rounded-xl h-48 mb-6">
+                    <img src="/assets/genshin.png" alt="Genshin Impact" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+                    <div class="absolute bottom-4 left-4">
+                        <h2 class="text-xl font-bold">Genshin Impact</h2>
+                    </div>
                 </div>
+                <p class="text-sm text-tech-muted">Open-world action RPG that I spend most of my free time in.</p>
+            </div>
+            
+            <!-- Game 2 -->
+            <div class="tech-card group cursor-pointer" onclick="showGame('/assets/lienquan.png')">
+                <div class="relative overflow-hidden rounded-xl h-48 mb-6">
+                    <img src="/assets/lienquan.png" alt="Liên Quân Mobile" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+                    <div class="absolute bottom-4 left-4">
+                        <h2 class="text-xl font-bold">Liên Quân Mobile</h2>
+                    </div>
+                </div>
+                <p class="text-sm text-tech-muted">Fast-paced MOBA battles for competitive gaming sessions.</p>
             </div>
         </div>
+    </main>
 
-        <!-- KHỐI DANH SÁCH GAME -->
-        <div id="game-section">
-            <h2>My Games</h2>
-            <ul class="game-list">
-                <!-- Game 1 -->
-                <li class="game-item" onclick="showGame('genshin.png')">
-                    <img src="picture/genshin.png" alt="Genshin Impact">
-                    <span class="game-name">Genshin Impact</span>
-                </li>
-                
-                <!-- Game 2 -->
-                <li class="game-item" onclick="showGame('lienquan.png')">
-                    <img src="picture/lienquan.png" alt="Liên Quân Mobile">
-                    <span class="game-name">Liên Quân Mobile</span>
-                </li>
-            </ul>
+    <!-- Modal -->
+    <div id="game-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/90 p-6 backdrop-blur-sm opacity-0 transition-opacity duration-300">
+        <div class="relative max-w-5xl w-full">
+            <button class="absolute -top-12 right-0 text-white hover:text-tech-accent p-2" onclick="hideModal()">
+                <i data-lucide="sun" class="w-8 h-8 rotate-45"></i> <!-- Using sun as a decorative close for now -->
+            </button>
+            <img id="game-image" src="" alt="Game Zoomed" class="w-full rounded-2xl shadow-2xl border border-white/10">
         </div>
     </div>
 
-    <!-- MODAL HIỆN ẢNH -->
-    <!-- ĐÃ XÓA onclick="hideModal()" khỏi đây -->
-    <div id="game-modal" class="modal">
-        <span class="close-button">&times;</span>
-        <img id="game-image" src="" alt="Game Image Zoomed">
-    </div>
+    <footer class="p-12 text-center text-tech-muted text-xs">
+        © 2026 Nguyen Tuan Anh.
+    </footer>
 
-    <script src="js/script-game.js"></script>
-    <script src="js/script_changepic.js"></script>
+    <script type="module" src="/src/js/main.js"></script>
+    <script>
+        function showGame(src) {
+            const modal = document.getElementById('game-modal');
+            const img = document.getElementById('game-image');
+            img.src = src;
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            setTimeout(() => modal.classList.add('opacity-100'), 10);
+        }
+        function hideModal() {
+            const modal = document.getElementById('game-modal');
+            modal.classList.remove('opacity-100');
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+            }, 300);
+        }
+    </script>
 </body>
 </html>
