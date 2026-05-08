@@ -25,7 +25,7 @@ const terminalLines = [
     { text: 'Interests: Algorithms, Linux, Software Engineering', type: 'info' },
     { text: 'Status: Learning and building cool stuff...', type: 'info' },
     { text: 'Ls projects/', type: 'command' },
-    { text: 'VibeCode-AI  Vibecode_Zooteam  Portfolio', type: 'info' }
+    { text: 'TDTU_i3_app Vibe-Quest-Rpg tool-check-tkb', type: 'info' }
 ];
 
 const terminalBody = document.getElementById('terminal-body');
