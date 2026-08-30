@@ -2,7 +2,7 @@
 
 A professional, engineering-centric portfolio designed to showcase software engineering expertise, algorithmic skills, and a passion for the Linux ecosystem.
 
-**Live Demo:** [about-me-delta-gray.vercel.app](https://about-me-delta-gray.vercel.app/)
+**Live Demo:** [https://about-me-delta-gray.vercel.app/](https://ngtuananh.vercel.app/)
 
 ---
 
