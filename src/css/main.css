@@ -39,6 +39,10 @@
     @apply font-bold tracking-tight;
     color: var(--text-color);
   }
+
+  html, body {
+    overflow-x: clip;
+  }
 }
 
 @layer components {
@@ -58,6 +62,7 @@
     background-color: var(--card-bg);
     border: 1px solid var(--card-border);
     @apply rounded-xl p-6 transition-all duration-300;
+    word-break: break-word;
   }
 
   .tech-card:hover {
@@ -94,6 +99,7 @@
     backdrop-filter: blur(12px);
     border: 1px solid var(--card-border);
     @apply rounded-2xl;
+    overflow: hidden;
   }
 }
 
@@ -119,4 +125,63 @@
 
 ::-webkit-scrollbar-thumb {
   @apply bg-white/10 rounded-full transition-colors hover:bg-tech-accent/40;
+}
+
+@media (max-width: 767px) {
+  .tech-card {
+    @apply p-4;
+    /* Remove fixed padding overrides so contact cards can be full width */
+    min-height: 44px; /* accessibility: minimum tap target */
+  }
+
+  .terminal-body {
+    @apply p-4;
+    min-height: 200px !important;
+  }
+
+  .glass-panel {
+    max-width: 100%;
+  }
+
+  /* Prevent neofetch / pre blocks from breaking mobile layout */
+  pre, pre code {
+    white-space: pre;
+    overflow-x: auto;
+    max-width: 100%;
+    display: block;
+    font-size: 0.65rem;
+  }
+
+  /* Contact cards: full width on mobile */
+  #contact a.tech-card {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* Achievement images: fixed smaller size on mobile */
+  #achievements .glass-panel img {
+    width: 4.5rem !important;
+    height: 4.5rem !important;
+    flex-shrink: 0;
+  }
+
+  /* Hero CTA buttons: full width, centered */
+  #hero .flex.w-full a {
+    text-align: center;
+    justify-content: center;
+  }
+
+  /* Projects header: stack cleanly */
+  #projects .flex.flex-col.md\:flex-row {
+    gap: 0.75rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
 }

@@ -2,6 +2,8 @@
 export default {
   content: [
     "./index.html",
+    "./game.html",
+    "./qr.html",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   darkMode: 'class',

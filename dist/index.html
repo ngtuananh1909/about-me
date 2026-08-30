@@ -15,12 +15,12 @@
     
     <!-- Favicon (placeholder/existing) -->
     <link rel="icon" type="image/png" href="/assets/avatar2.png">
-  <script type="module" crossorigin src="/assets/main-DPGunExB.js"></script>
-  <link rel="stylesheet" crossorigin href="/assets/main-CIChEmzR.css">
+  <script type="module" crossorigin src="/assets/main-BI5XHwPG.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/main-C0nF6Hlp.css">
 </head>
-<body class="bg-tech-bg text-white selection:bg-tech-accent/30 selection:text-tech-accent bg-grid">
+<body class="selection:bg-tech-accent/30 selection:text-tech-accent bg-grid">
     <!-- Navigation -->
-    <nav class="fixed top-0 w-full z-50 glass-panel !rounded-none border-t-0 border-x-0 px-6 py-4 flex justify-between items-center">
+    <nav class="fixed top-0 w-full z-50 glass-panel !rounded-none border-t-0 border-x-0 px-4 py-3 sm:px-6 sm:py-4 flex justify-between items-center">
         <a href="#" class="text-xl font-extrabold tracking-tighter hover:text-tech-accent transition-colors">
             NTA<span class="text-tech-accent">.</span>
         </a>
@@ -31,37 +31,49 @@
             <a href="#achievements" class="hover:text-white transition-colors">Achievements</a>
             <a href="#contact" class="hover:text-white transition-colors">Contact</a>
         </div>
-        <div class="flex items-center gap-4">
+        <div class="flex items-center gap-2 sm:gap-4">
+            <button id="mobile-menu-toggle" class="md:hidden p-2 hover:bg-white/5 rounded-lg transition-colors" type="button" aria-label="Open navigation menu" aria-controls="mobile-menu" aria-expanded="false">
+                <i data-lucide="menu" class="w-5 h-5"></i>
+            </button>
             <button id="theme-toggle" class="p-2 hover:bg-white/5 rounded-lg transition-colors" aria-label="Toggle Dark Mode">
                 <i data-lucide="sun" class="w-5 h-5 hidden dark:block"></i>
                 <i data-lucide="moon" class="w-5 h-5 block dark:hidden"></i>
             </button>
-            <a href="https://github.com/ngtuananh1909" target="_blank" class="btn-primary flex items-center gap-2">
+            <a href="https://github.com/ngtuananh1909" target="_blank" class="btn-primary flex items-center gap-2 !px-4 sm:!px-6">
                 <i data-lucide="github" class="w-4 h-4"></i>
-                <span>Hire Me</span>
+                <span class="hidden sm:inline">Hire Me</span>
             </a>
         </div>
     </nav>
+    <div id="mobile-menu" class="fixed top-16 inset-x-4 z-40 hidden md:hidden glass-panel p-4 shadow-2xl">
+        <div class="flex flex-col text-sm font-semibold uppercase tracking-widest text-tech-muted">
+            <a href="#about" class="rounded-lg px-3 py-3 hover:bg-white/5 hover:text-white transition-colors" data-mobile-menu-link>About</a>
+            <a href="#skills" class="rounded-lg px-3 py-3 hover:bg-white/5 hover:text-white transition-colors" data-mobile-menu-link>Skills</a>
+            <a href="#projects" class="rounded-lg px-3 py-3 hover:bg-white/5 hover:text-white transition-colors" data-mobile-menu-link>Projects</a>
+            <a href="#achievements" class="rounded-lg px-3 py-3 hover:bg-white/5 hover:text-white transition-colors" data-mobile-menu-link>Achievements</a>
+            <a href="#contact" class="rounded-lg px-3 py-3 hover:bg-white/5 hover:text-white transition-colors" data-mobile-menu-link>Contact</a>
+        </div>
+    </div>
 
-    <main class="pt-24 max-w-7xl mx-auto px-6 space-y-32 mb-32">
+    <main class="pt-20 sm:pt-24 max-w-7xl mx-auto px-4 sm:px-6 space-y-20 md:space-y-32 mb-20 md:mb-32">
         <!-- Hero Section -->
-        <section id="hero" class="min-h-[70vh] flex flex-col items-center justify-center text-center space-y-8" data-aos="fade-up">
+        <section id="hero" class="min-h-[70vh] flex flex-col items-center justify-center text-center space-y-6 sm:space-y-8" data-aos="fade-up">
             <div class="relative group">
                 <div class="absolute -inset-1 bg-gradient-to-r from-tech-accent to-tech-secondary rounded-full blur opacity-25 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
-                <img src="/assets/avatar2.png" alt="Nguyen Tuan Anh" class="relative w-40 h-40 rounded-full border-2 border-white/10 shadow-2xl grayscale group-hover:grayscale-0 transition-all duration-500">
+                <img src="/assets/avatar2.png" alt="Nguyen Tuan Anh" class="relative w-32 h-32 sm:w-40 sm:h-40 rounded-full border-2 border-white/10 shadow-2xl grayscale group-hover:grayscale-0 transition-all duration-500">
             </div>
             <div class="space-y-4">
-                <h2 class="text-tech-accent font-mono text-lg tracking-widest" data-aos="fade-up" data-aos-delay="200">HELLO_WORLD.EXE</h2>
-                <h1 class="text-5xl md:text-7xl font-extrabold tracking-tighter" data-aos="fade-up" data-aos-delay="400">
+                <h2 class="text-tech-accent font-mono text-sm sm:text-lg tracking-[0.15em] sm:tracking-widest" data-aos="fade-up" data-aos-delay="200">HELLO_WORLD.EXE</h2>
+                <h1 class="text-4xl sm:text-5xl md:text-7xl font-extrabold tracking-tighter" data-aos="fade-up" data-aos-delay="400">
                     I'm <span class="accent-text glow-text">Tuan Anh</span>
                 </h1>
-                <p class="text-xl text-tech-muted max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="600">
+                <p class="text-base sm:text-xl text-tech-muted max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="600">
                     Software Engineer & Algorithm Enthusiast. Building high-performance solutions and exploring the depths of Linux environments.
                 </p>
             </div>
-            <div class="flex gap-4" data-aos="fade-up" data-aos-delay="800">
+            <div class="flex w-full flex-col sm:w-auto sm:flex-row gap-3 sm:gap-4" data-aos="fade-up" data-aos-delay="800">
                 <a href="#projects" class="btn-primary">View Projects</a>
-                <a href="#contact" class="px-6 py-2 border border-white/10 rounded-lg hover:bg-white/5 transition-colors font-semibold">Contact Me</a>
+                <a href="#contact" class="px-6 py-2 text-center border border-white/10 rounded-lg hover:bg-white/5 transition-colors font-semibold">Contact Me</a>
             </div>
         </section>
 
@@ -117,7 +129,7 @@
 <span class="font-bold">Host</span>: Custom Build
 <span class="font-bold">Kernel</span>: 6.8.0-generic
 <span class="font-bold">Shell</span>: zsh 5.9
-<span class="font-bold">CPU</span>: AMD Ryzen 7
+<span class="font-bold">CPU</span>: I7 12650H
 <span class="font-bold">Memory</span>: 16GB
 </code></pre>
             </div>
@@ -129,7 +141,7 @@
                 <h2 class="text-4xl font-bold mb-4">Core Tech <span class="text-tech-accent">Stack</span></h2>
                 <p class="text-tech-muted">Languages and tools I use to build robust software.</p>
             </div>
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
                 <!-- Skill Card 1 -->
                 <div class="tech-card flex flex-col items-center gap-4 text-center" data-aos="zoom-in" data-aos-delay="100">
                     <div class="w-12 h-12 bg-blue-500/10 rounded-lg flex items-center justify-center text-blue-500">
@@ -165,37 +177,12 @@
             </div>
         </section>
 
-        <!-- Stats Section (Codeforces/LeetCode) -->
-        <section id="stats" class="bg-tech-card border border-white/5 rounded-3xl p-12 text-center" data-aos="fade-up">
-            <h2 class="text-2xl font-bold mb-12 flex items-center justify-center gap-3">
-                <i data-lucide="binary" class="text-tech-accent"></i>
-                Competitive Stats
-            </h2>
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="space-y-2">
-                    <p class="text-tech-muted text-sm uppercase tracking-tighter">Current Rank</p>
-                    <p id="cf-rank" class="text-3xl font-extrabold text-tech-accent">---</p>
-                </div>
-                <div class="space-y-2">
-                    <p class="text-tech-muted text-sm uppercase tracking-tighter">Rating</p>
-                    <p id="cf-rating" class="text-3xl font-extrabold text-tech-secondary">---</p>
-                </div>
-                <div class="space-y-2">
-                    <p class="text-tech-muted text-sm uppercase tracking-tighter">Max Rank</p>
-                    <p id="cf-max-rank" class="text-3xl font-extrabold text-purple-400">---</p>
-                </div>
-            </div>
-            <div class="mt-12 flex justify-center gap-6">
-                <img src="https://img.shields.io/badge/Codeforces-ngtuananh1909-blue?style=for-the-badge&logo=codeforces" alt="Codeforces">
-                <img src="https://img.shields.io/badge/LeetCode-ngtuananh1909-orange?style=for-the-badge&logo=leetcode" alt="LeetCode">
-            </div>
-        </section>
 
         <!-- Projects Showcase -->
         <section id="projects" class="scroll-mt-32">
-            <div class="flex flex-col md:flex-row justify-between items-end mb-16" data-aos="fade-up">
+            <div class="flex flex-col md:flex-row justify-between md:items-end mb-10 md:mb-16" data-aos="fade-up">
                 <div class="space-y-4">
-                    <h2 class="text-4xl font-bold">Featured <span class="text-tech-accent">Projects</span></h2>
+                    <h2 class="text-3xl sm:text-4xl font-bold">Featured <span class="text-tech-accent">Projects</span></h2>
                     <p class="text-tech-muted">Cutting-edge tools I've engineered recently.</p>
                 </div>
                 <a href="https://github.com/ngtuananh1909" target="_blank" class="flex items-center gap-2 text-tech-accent font-semibold hover:underline mt-4 md:mt-0">
@@ -210,14 +197,14 @@
                             <div class="w-12 h-12 bg-tech-accent/10 rounded-xl flex items-center justify-center text-tech-accent">
                                 <i data-lucide="github" class="w-6 h-6"></i>
                             </div>
-                            <span class="text-xs font-mono text-tech-muted bg-white/5 px-3 py-1 rounded-full">Python • AI</span>
+                            <span class="text-xs font-mono text-tech-muted bg-white/5 px-3 py-1 rounded-full">Html • Css</span>
                         </div>
-                        <h3 class="text-2xl font-bold group-hover:text-tech-accent transition-colors">VibeCode-AI</h3>
+                        <h3 class="text-2xl font-bold group-hover:text-tech-accent transition-colors">Waybar Custom Config</h3>
                         <p class="text-tech-muted leading-relaxed">
-                            An intelligent coding assistant designed to optimize developer workflow using state-of-the-art LLMs. Focuses on code quality and rapid prototyping.
+                            A highly optimized and aesthetic configuration for Waybar on Hyprland/Sway. Features custom modules for power management, networking, and system monitoring with a sleek terminal aesthetic.
                         </p>
                         <div class="flex gap-4">
-                            <a href="https://github.com/ngtuananh1909/VibeCode-AI" target="_blank" class="flex items-center gap-2 text-sm font-bold text-white hover:text-tech-accent transition-colors">
+                            <a href="https://github.com/ngtuananh1909/my-waybar" target="_blank" class="flex items-center gap-2 text-sm font-bold text-white hover:text-tech-accent transition-colors">
                                 <i data-lucide="github" class="w-4 h-4"></i> Source
                             </a>
                         </div>
@@ -230,7 +217,7 @@
                             <div class="w-12 h-12 bg-tech-secondary/10 rounded-xl flex items-center justify-center text-tech-secondary">
                                 <i data-lucide="github" class="w-6 h-6"></i>
                             </div>
-                            <span class="text-xs font-mono text-tech-muted bg-white/5 px-3 py-1 rounded-full">C++ • Systems</span>
+                            <span class="text-xs font-mono text-tech-muted bg-white/5 px-3 py-1 rounded-full">Nextjs • Fullstackdev</span>
                         </div>
                         <h3 class="text-2xl font-bold group-hover:text-tech-secondary transition-colors">Vibecode_Zooteam</h3>
                         <p class="text-tech-muted leading-relaxed">
@@ -243,27 +230,60 @@
                         </div>
                     </div>
                 </div>
+                <div class="tech-card group overflow-hidden p-0" data-aos="fade-up" data-aos-delay="200">
+                    <div class="p-8 space-y-6">
+                        <div class="flex justify-between items-start">
+                            <div class="w-12 h-12 bg-tech-secondary/10 rounded-xl flex items-center justify-center text-tech-secondary">
+                                <i data-lucide="github" class="w-6 h-6"></i>
+                            </div>
+                            <span class="text-xs font-mono text-tech-muted bg-white/5 px-3 py-1 rounded-full">Python • github automation</span>
+                        </div>
+                        <h3 class="text-2xl font-bold group-hover:text-tech-secondary transition-colors">Tool-Check-TKB</h3>
+                        <p class="text-tech-muted leading-relaxed">
+                            Find and update schedule to Google Calendar, built for TKB students to easily track their class schedules and receive timely notifications. 
+                        </p>
+                        <div class="flex gap-4">
+                            <a href="https://github.com/ngtuananh1909/tool-check-tkb" target="_blank" class="flex items-center gap-2 text-sm font-bold text-white hover:text-tech-secondary transition-colors">
+                                <i data-lucide="github" class="w-4 h-4"></i> Source
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
         <!-- Achievements Section -->
         <section id="achievements" class="scroll-mt-32">
-            <h2 class="text-4xl font-bold text-center mb-16" data-aos="fade-up">Hall of <span class="text-tech-accent">Awards</span></h2>
-            <div class="grid md:grid-cols-2 gap-8">
+            <h2 class="text-3xl sm:text-4xl font-bold text-center mb-10 md:mb-16" data-aos="fade-up">Hall of <span class="text-tech-accent">Awards</span></h2>
+            <div class="grid md:grid-cols-2 gap-5 sm:gap-8">
                 <!-- Achievement Card 1 -->
-                <div class="glass-panel p-1 flex gap-6 items-center" data-aos="fade-right">
-                    <img src="/assets/thanh-tich-1.png" alt="OLP Achievement" class="w-24 h-24 rounded-l-2xl object-cover border-r border-white/10">
-                    <div class="p-4">
-                        <h3 class="font-bold text-tech-accent">Olympic 6/4 Prize</h3>
-                        <p class="text-xs text-tech-muted mt-1">Excellent Performance in Local Algorithms Competition</p>
+                <div class="glass-panel p-1 flex gap-3 sm:gap-6 items-center" data-aos="fade-right">
+                    <img src="/assets/thanh-tich-1.png" alt="OLP Achievement" class="w-20 h-20 sm:w-24 sm:h-24 rounded-l-2xl object-cover border-r border-white/10">
+                    <div class="p-3 sm:p-4">
+                        <h3 class="font-bold text-tech-accent">Olympic 6/4 Prize(🥉)</h3>
+                        <p class="text-xs text-tech-muted mt-1">National Youth Informatics Competition - Bronze Medal</p>
                     </div>
                 </div>
                 <!-- Achievement Card 2 -->
-                <div class="glass-panel p-1 flex gap-6 items-center" data-aos="fade-left">
-                    <img src="/assets/thanh-tich-2.png" alt="Tin Học Trẻ Achievement" class="w-24 h-24 rounded-l-2xl object-cover border-r border-white/10">
-                    <div class="p-4">
-                        <h3 class="font-bold text-tech-secondary">Tin Học Trẻ (🥉)</h3>
-                        <p class="text-xs text-tech-muted mt-1">National Youth Informatics Competition - Bronze Medal</p>
+                <div class="glass-panel p-1 flex gap-3 sm:gap-6 items-center" data-aos="fade-left">
+                    <img src="/assets/thanh-tich-2.png" alt="Tin Học Trẻ Achievement" class="w-20 h-20 sm:w-24 sm:h-24 rounded-l-2xl object-cover border-r border-white/10">
+                    <div class="p-3 sm:p-4">
+                        <h3 class="font-bold text-tech-secondary">Tin Học Trẻ </h3>
+                        <p class="text-xs text-tech-muted mt-1">National Youth Informatics Competition</p>
+                    </div>
+                </div>
+                <div class="glass-panel p-1 flex gap-3 sm:gap-6 items-center" data-aos="fade-left">
+                    <img src="/assets/thanh-tich-3-LeP8RXKP.png" alt="Cuoc thi phan mem" class="w-20 h-20 sm:w-24 sm:h-24 rounded-l-2xl object-cover border-r border-white/10">
+                    <div class="p-3 sm:p-4">
+                        <h3 class="font-bold text-tech-secondary">Cuộc thi Phần mềm</h3>
+                        <p class="text-xs text-tech-muted mt-1">National Youth InfGoldormatics Competition - Gold Medal</p>
+                    </div>
+                </div>
+                <div class="glass-panel p-1 flex gap-3 sm:gap-6 items-center" data-aos="fade-left">
+                    <img src="/assets/thanh-tich-4-Bq-QYNNJ.png" alt="Cuoc thi phan mem" class="w-20 h-20 sm:w-24 sm:h-24 rounded-l-2xl object-cover border-r border-white/10">
+                    <div class="p-3 sm:p-4">
+                        <h3 class="font-bold text-tech-secondary">Trae Hackathon</h3>
+                        <p class="text-xs text-tech-muted mt-1">Second Place</p>
                     </div>
                 </div>
             </div>
@@ -275,10 +295,18 @@
                 <h2 class="text-4xl font-extrabold tracking-tighter">Get in <span class="text-tech-accent">Touch</span></h2>
                 <p class="text-tech-muted max-w-lg mx-auto">Open for collaborations, interesting projects, or just a tech chat. My inbox is always open.</p>
             </div>
-            <div class="flex flex-wrap justify-center gap-6" data-aos="fade-up" data-aos-delay="200">
-                <a href="mailto:tuananh190907@gmail.com" class="tech-card flex items-center gap-3 !px-8 hover:bg-white/5">
+            <div class="flex flex-col sm:flex-row flex-wrap justify-center gap-3 sm:gap-6" data-aos="fade-up" data-aos-delay="200">
+                <a href="mailto:tuananh190907@gmail.com" class="tech-card flex items-center gap-3 !px-5 sm:!px-8 hover:bg-white/5">
                     <i data-lucide="mail" class="text-tech-accent"></i>
                     <span>Email Me</span>
+                </a>
+                <a href="tel:+84799389161" class="tech-card flex items-center gap-3 !px-8 hover:bg-white/5">
+                    <i data-lucide="phone" class="text-tech-accent"></i>
+                    <span>+84 799 389 161</span>
+                </a>
+                <a href="https://discord.com/users/1212307451991433218" target="_blank" class="tech-card flex items-center gap-3 !px-8 hover:bg-white/5">
+                    <i data-lucide="globe" class="text-tech-accent"></i>
+                    <span>Discord</span>
                 </a>
                 <a href="https://github.com/ngtuananh1909" target="_blank" class="tech-card flex items-center gap-3 !px-8 hover:bg-white/5">
                     <i data-lucide="github" class="text-tech-accent"></i>
@@ -287,6 +315,10 @@
                 <a href="https://www.facebook.com/tuan.anh.19092007" target="_blank" class="tech-card flex items-center gap-3 !px-8 hover:bg-white/5">
                     <i data-lucide="facebook" class="text-tech-accent text-blue-500"></i>
                     <span>Facebook</span>
+                </a>
+                <a href="https://gravatar.com/nta1909k7" target="_blank" class="tech-card flex items-center gap-3 !px-8 hover:bg-white/5">
+                    <i data-lucide="external-link" class="text-tech-accent"></i>
+                    <span>Gravatar</span>
                 </a>
             </div>
         </section>
