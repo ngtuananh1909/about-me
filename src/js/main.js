@@ -1,6 +1,6 @@
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import { createIcons, Github, Facebook, Mail, Phone, ExternalLink, Moon, Sun, Terminal as TerminalIcon, Award, Cpu, Code2, Coffee, Layout, Binary, Globe } from 'lucide';
+import { createIcons, Github, Facebook, Mail, Phone, ExternalLink, Moon, Sun, Terminal as TerminalIcon, Award, Cpu, Code2, Coffee, Layout, Binary, Globe, Menu } from 'lucide';
 
 // Initialize AOS
 AOS.init({
@@ -12,7 +12,7 @@ AOS.init({
 // Initialize Lucide Icons
 createIcons({
     icons: {
-        Github, Facebook, Mail, Phone, ExternalLink, Moon, Sun, TerminalIcon, Award, Cpu, Code2, Coffee, Layout, Binary, Globe
+        Github, Facebook, Mail, Phone, ExternalLink, Moon, Sun, TerminalIcon, Award, Cpu, Code2, Coffee, Layout, Binary, Globe, Menu
     }
 });
 
@@ -92,6 +92,29 @@ async function fetchCodeforcesStats(handle = 'ngtuananh1909') {
     }
 }
 
+// Mobile Navigation
+const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+const mobileMenu = document.getElementById('mobile-menu');
+if (mobileMenuToggle && mobileMenu) {
+    const closeMobileMenu = () => {
+        mobileMenu.classList.add('hidden');
+        mobileMenuToggle.setAttribute('aria-expanded', 'false');
+    };
+
+    mobileMenuToggle.addEventListener('click', () => {
+        const isOpen = mobileMenu.classList.toggle('hidden') === false;
+        mobileMenuToggle.setAttribute('aria-expanded', String(isOpen));
+    });
+
+    mobileMenu.querySelectorAll('[data-mobile-menu-link]').forEach((link) => {
+        link.addEventListener('click', closeMobileMenu);
+    });
+
+    document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape') closeMobileMenu();
+    });
+}
+
 // Dark Mode Toggle
 const themeToggle = document.getElementById('theme-toggle');
 if (themeToggle) {
@@ -110,4 +133,6 @@ if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && w
 }
 
 // Initialize Stats
-fetchCodeforcesStats();
+if (document.getElementById('cf-rank')) {
+    fetchCodeforcesStats();
+}

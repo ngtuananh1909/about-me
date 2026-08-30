@@ -10,20 +10,20 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body class="font-sans bg-grid min-h-screen flex flex-col">
-    <nav class="p-6">
-        <a href="index.html" class="flex items-center gap-2 text-tech-muted hover:text-tech-accent transition-colors font-bold uppercase tracking-widest text-sm">
+    <nav class="p-4 sm:p-6">
+        <a href="index.html" class="flex items-center gap-2 text-tech-muted hover:text-tech-accent transition-colors font-bold uppercase tracking-widest text-xs sm:text-sm">
             <i data-lucide="external-link" class="w-4 h-4 rotate-180"></i>
             Back to Portfolio
         </a>
     </nav>
 
-    <main class="flex-grow max-w-4xl mx-auto px-6 py-12 space-y-12">
+    <main class="flex-grow max-w-4xl mx-auto px-4 sm:px-6 py-8 sm:py-12 space-y-8 sm:space-y-12">
         <header class="text-center space-y-4">
-            <h1 class="text-5xl font-extrabold tracking-tighter">My <span class="text-tech-accent">Games</span></h1>
-            <p class="text-tech-muted">A collection of worlds I've explored and enjoyed.</p>
+            <h1 class="text-4xl sm:text-5xl font-extrabold tracking-tighter">My <span class="text-tech-accent">Games</span></h1>
+            <p class="text-sm sm:text-base text-tech-muted">A collection of worlds I've explored and enjoyed.</p>
         </header>
 
-        <div class="grid md:grid-cols-2 gap-8">
+        <div class="grid md:grid-cols-2 gap-5 sm:gap-8">
             <!-- Game 1 -->
             <div class="tech-card group cursor-pointer" onclick="showGame('/assets/genshin.png')">
                 <div class="relative overflow-hidden rounded-xl h-48 mb-6">
@@ -51,12 +51,12 @@
     </main>
 
     <!-- Modal -->
-    <div id="game-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/90 p-6 backdrop-blur-sm opacity-0 transition-opacity duration-300">
-        <div class="relative max-w-5xl w-full">
-            <button class="absolute -top-12 right-0 text-white hover:text-tech-accent p-2" onclick="hideModal()">
-                <i data-lucide="sun" class="w-8 h-8 rotate-45"></i> <!-- Using sun as a decorative close for now -->
+    <div id="game-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/90 p-4 sm:p-6 backdrop-blur-sm opacity-0 transition-opacity duration-300" role="dialog" aria-modal="true" aria-label="Game image preview">
+        <div class="relative flex max-h-[90vh] w-full max-w-5xl items-center justify-center">
+            <button class="absolute right-2 top-2 z-10 rounded-lg bg-black/60 p-2 text-white hover:text-tech-accent" type="button" aria-label="Close image preview" onclick="hideModal()">
+                <i data-lucide="sun" class="w-6 h-6 sm:w-8 sm:h-8 rotate-45"></i>
             </button>
-            <img id="game-image" src="" alt="Game Zoomed" class="w-full rounded-2xl shadow-2xl border border-white/10">
+            <img id="game-image" src="" alt="Game Zoomed" class="max-h-[85vh] max-w-full rounded-2xl border border-white/10 object-contain shadow-2xl">
         </div>
     </div>
 
@@ -66,22 +66,33 @@
 
     <script type="module" src="/src/js/main.js"></script>
     <script>
+        const modal = document.getElementById('game-modal');
+        const gameImage = document.getElementById('game-image');
+
         function showGame(src) {
-            const modal = document.getElementById('game-modal');
-            const img = document.getElementById('game-image');
-            img.src = src;
+            gameImage.src = src;
             modal.classList.remove('hidden');
             modal.classList.add('flex');
+            document.body.classList.add('overflow-hidden');
             setTimeout(() => modal.classList.add('opacity-100'), 10);
         }
+
         function hideModal() {
-            const modal = document.getElementById('game-modal');
             modal.classList.remove('opacity-100');
+            document.body.classList.remove('overflow-hidden');
             setTimeout(() => {
                 modal.classList.add('hidden');
                 modal.classList.remove('flex');
             }, 300);
         }
+
+        modal.addEventListener('click', (event) => {
+            if (event.target === modal) hideModal();
+        });
+
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape' && !modal.classList.contains('hidden')) hideModal();
+        });
     </script>
 </body>
 </html>
