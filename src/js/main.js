@@ -1,6 +1,6 @@
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import { createIcons, Github, Facebook, Mail, Phone, ExternalLink, Moon, Sun, Terminal as TerminalIcon, Award, Cpu, Code2, Coffee, Layout, Binary, Globe, Menu } from 'lucide';
+import { createIcons, Github, Facebook, Mail, Phone, ExternalLink, Moon, Sun, Terminal as TerminalIcon, Award, Cpu, Code2, Coffee, Layout, Binary, Globe, Menu, Users, Server, Layers } from 'lucide';
 
 // Initialize AOS
 AOS.init({
@@ -12,7 +12,7 @@ AOS.init({
 // Initialize Lucide Icons
 createIcons({
     icons: {
-        Github, Facebook, Mail, Phone, ExternalLink, Moon, Sun, TerminalIcon, Award, Cpu, Code2, Coffee, Layout, Binary, Globe, Menu
+        Github, Facebook, Mail, Phone, ExternalLink, Moon, Sun, TerminalIcon, Award, Cpu, Code2, Coffee, Layout, Binary, Globe, Menu, Users, Server, Layers
     }
 });
 
